@@ -1,0 +1,165 @@
+<!DOCTYPE html> 
+<!-- Declaring the type of document -->
+<!-- Author: Christopher Rosser
+	 Date: 17 Feb 21
+	 chiropractic.html web page showing costs for chiropractic services.
+-->
+<html>
+	<!-- Header element containing the title element and meta data -->
+	<head> 
+		<meta charset="utf-8">
+		<!-- <link href="dps-styles.css" rel="stylesheet" type="text/css" /> -->
+		<title>Chiropractic</title>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+			<style>
+				@import url(ibn-styles.css);
+			</style>
+	</head>
+	
+		<div class="mainhead">
+			<!-- Name heading element -->
+			<h1><div class="lpg">LPG </div><div class="pcare"> Patient Care</div></h1>
+			<nav>
+				<ul class="navlist">
+					<!-- Links to pages  -->
+					<li class="navlist"><a href="https://crosser88.github.io/ClassProject/Rosser_home.html">Home</a></li>
+					<li class="navlist"><a href="https://crosser88.github.io/ClassProject/Rosser_cardiology.html">Cardiology</a></li>
+					<li class="navlist"><a href="https://crosser88.github.io/ClassProject/Rosser_oncology.html">Oncology</a></li>
+					<li class="navlist"><a href="https://crosser88.github.io/ClassProject/Rosser_wellness.html">Wellness</a></li>
+					<li class="navlist"><a href="https://crosser88.github.io/ClassProject/Rosser_chiropractic.html">Chiropractic</a></li>
+					<li class="navlist"><a href="https://crosser88.github.io/ClassProject/Rosser_emergency.html">Emergency</a></li>
+					<li class="navlist"><a href="https://crosser88.github.io/ClassProject/Rosser_contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+		<hr>
+
+	<!-- Content of the web page -->
+	<body> 
+
+		<!-- Div element identified by chiropractic; a section on for chiropractic services -->
+		<div class ="chiro">
+			<!-- Second heading for prices -->
+			<h2>Chiropractic</h2> 
+			<!-- Table element for pricing rates -->
+			<table class="therapeutic">
+				<caption><b><em>Therapeutic Exercise/Stretches</em></b></caption>
+				<tr>
+					<th>Hour(s)</th>
+					<th>Rate</th>
+				</tr>
+				<tr>
+					<td>1 hour</td>
+					<td>$40 (per hour)</td>
+				</tr>
+			</table>
+
+			<table class="phytherapy">
+				<caption><b><em>Physical Therapy</em></b></caption>
+				<tr>
+					<th>Hour(s)</th>
+					<th>Rate</th>
+				</tr>
+				<tr>
+					<td>1 hour</td>
+					<td>$50 (per hour)</td>
+				</tr>
+			</table>
+
+			<table class="spinal">
+				<caption><b><em>Spinal Traction</em></b></caption>
+				<tr>
+					<th>Consultation</th>
+					<th>Exam</th>
+					<th>X-Ray (if needed)</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+					<td>Included</td>
+					<td>Included</td>
+					<td>Included</td>
+					<td>$100</td>
+				</tr>
+			</table>
+
+			<table class="dietnutrition">
+				<caption><b><em>Diet/Nutritional Counseling</em></b></caption>
+				<tr>
+					<th>Hour</th>
+					<th>Bi-weekly (1.5 hours)</th>
+					<th>Rate</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td></td>
+					<td>$35 (per hour)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>$45</td>
+				</tr>
+			</table>
+		</div>
+
+			<br><br>
+				<div class="chirovisit">
+					<!-- Pseudo phone number and appointment form -->
+					Schedule your session now! Call <a href="tel:1.888.555.6145" class="clinic-call">1.888.555.6145</a> or schedule an
+					appointment.
+					<div class ="container">
+					  <form id="visitForm" onsubmit="return validateForm()" target="_blank">
+					        <label for="fname">First Name</label>
+					        <input type="text" id="fname" name="firstname" placeholder="Your first name...">
+					        <br>
+					        <label for="lname">Last Name</label>
+					        <input type="text" id="lname" name="lastname" placeholder="Your last name...">
+							<br>				        
+					        <label for="email">Email</label>
+					        <input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="chiroemail" name="email" placeholder="Your email..." required>
+					        <br>
+							<label for="visittime">Schedule Date/Time</label>
+							<input type="datetime-local" id="visittime" name="visittime">
+							<br>
+							<input type="submit" id="chirosub" value="Submit">
+						</form>
+					</div>
+				</div>
+			  	<script type="text/javascript">
+				  	function validateForm() 
+				  	{
+						var x = document.forms["visitForm"]["fname"].value;
+						var y = document.forms["visitForm"]["lname"].value;
+						var z = document.forms["visitForm"]["visittime"].value;
+						if (x == "")
+						{
+						    alert("First Name must be filled out");
+						    return false;
+						}
+						else if (y == "")
+						{
+						    alert("Last Name must be filled out");
+						    return false;
+						}
+						else if (!checkDate(z.startdate) && !checkTime(z.starttime))
+						{
+						    alert("Please enter a date/time");
+						    return false;
+						}
+						else
+						{
+							document.forms["visitForm"]["fname"].value = "";
+							document.forms["visitForm"]["lname"].value = "";
+							document.forms["visitForm"]["visittime"].value = Date.now();
+						}
+					}
+				  </script>
+
+	</body>
+
+	<!-- Footer for webpages -->
+	<footer>
+			<small>
+				Copyright &copy;2021 Christopher Rosser
+			</small>
+	</footer>
+</html>
